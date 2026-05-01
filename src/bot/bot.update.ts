@@ -78,7 +78,7 @@ export class BotUpdate {
       return;
     }
 
-    const user = await this.userService.findByTelegramId(ctx.from.id);
+    const user = await this.userService.findByTelegramId(ctx.from!.id);
     if (!user) return;
     await this.userService.setPhone(user.id, contact.phone_number);
 

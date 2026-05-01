@@ -29,12 +29,12 @@ export class ProductService {
     });
   }
 
-  update(id: string, dto: UpdateProductDto) {
-    const { categoryId, ...rest } = dto;
-    const data: any = { ...rest };
-    if (categoryId) data.category = { connect: { id: categoryId } };
-    return this.repo.update(id, data);
-  }
+ update(id: string, dto: UpdateProductDto) {
+  const { categoryId, ...rest } = dto as any;
+  const data: any = { ...rest };
+  if (categoryId) data.category = { connect: { id: categoryId } };
+  return this.repo.update(id, data);
+}
 
   delete(id: string) {
     return this.repo.delete(id);

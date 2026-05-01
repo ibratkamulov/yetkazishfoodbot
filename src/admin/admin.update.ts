@@ -1,4 +1,4 @@
-import { Update, Command, Ctx, Action, UseGuards as TgUseGuards } from 'nestjs-telegraf';
+import { Update, Command, Ctx, Action } from 'nestjs-telegraf';
 import { Logger, UseGuards } from '@nestjs/common';
 import { OrderService } from '../order/order.service';
 import { TelegramAdminGuard } from '../common/guards/admin.guard';
