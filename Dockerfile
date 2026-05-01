@@ -1,5 +1,5 @@
 # ===== Build stage =====
-FROM node:20-slim AS builder        # alpine → slim
+FROM node:20-slim AS builder
 WORKDIR /app
 
 COPY package*.json ./
@@ -14,7 +14,7 @@ RUN npx prisma generate
 RUN npm run build
 
 # ===== Runtime stage =====
-FROM node:20-slim AS runner          # alpine → slim
+FROM node:20-slim AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
