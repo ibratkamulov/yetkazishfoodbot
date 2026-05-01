@@ -29,5 +29,7 @@
       "@payment/*": ["src/payment/*"],
       "@admin/*": ["src/admin/*"]
     }
-  }
+  },
+  "include": ["src"],               // <-- faqat src/ papkasi
+  "exclude": ["node_modules", "dist", "prisma", "test"]  // <-- prisma chiqarib tashlandi
 }
