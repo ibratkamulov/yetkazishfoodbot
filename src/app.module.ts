@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
-import { APP_GUARD } from '@nestjs/core';
+import { ThrottlerModule } from '@nestjs/throttler';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { TelegrafModule } from 'nestjs-telegraf';
 import { ScheduleModule } from '@nestjs/schedule';
@@ -64,11 +63,6 @@ import { RedisService } from './redis/redis.service';
     NotificationModule,
     BotModule,
   ],
-  providers: [
-    {
-      provide: APP_GUARD,
-      useClass: ThrottlerGuard,
-    },
-  ],
+  providers: [],
 })
 export class AppModule {}
